@@ -1,3 +1,7 @@
+module.exports = {
+  ...require("./auth")
+};
+
 module.exports.notFound = (req, res, next) => {
   const error = new Error("Not found");
   error.status = 404;
