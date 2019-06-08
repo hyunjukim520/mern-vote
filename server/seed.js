@@ -1,3 +1,4 @@
+require("dotenv").config();
 const db = require("./models");
 
 const users = [
@@ -26,6 +27,7 @@ const polls = [
 
 const seed = async () => {
   try {
+    console.log("start here!");
     await db.User.remove();
     console.log("DROP ALL USERS");
 
