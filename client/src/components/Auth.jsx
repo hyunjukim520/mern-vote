@@ -43,6 +43,7 @@ class Auth extends Component {
             value={password}
             name="password"
             id="password"
+            autoComplete="off"
             onChange={this.handleChange}
           />
           <button type="submit">{authType}</button>
