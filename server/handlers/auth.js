@@ -24,7 +24,7 @@ exports.login = async (req, res, next) => {
 
     if (!user) {
       // throw new Error("Invalid username");
-      res.status(404).send({ Error: "Invalid username" });
+      res.status(404).send({ message: "Invalid username" });
     }
 
     const { id, username } = user;

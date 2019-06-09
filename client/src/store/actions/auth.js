@@ -20,7 +20,7 @@ export const logout = () => {
   };
 };
 
-export const addUser = (path, data) => {
+export const authUser = (path, data) => {
   return async dispatch => {
     try {
       const { token, ...user } = await api.call("post", `auth/${path}`, data);
@@ -29,8 +29,8 @@ export const addUser = (path, data) => {
       dispatch(setCurrentUser(user));
       dispatch(removeError());
     } catch (err) {
-      const { error } = err.response.data;
-      dispatch(addError(error));
+      const error = err.response.data;
+      dispatch(addError(error.message));
     }
   };
 };
