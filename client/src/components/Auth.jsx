@@ -27,17 +27,22 @@ class Auth extends Component {
     const { authType } = this.props;
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
-          <label htmlFor="username">username</label>
+        <form className="form" onSubmit={this.handleSubmit}>
+          <label htmlFor="username" className="form-label">
+            username
+          </label>
           <input
             type="text"
             value={username}
             name="username"
             id="username"
             onChange={this.handleChange}
+            className="form-input"
           />
 
-          <label htmlFor="password">password</label>
+          <label htmlFor="password" className="form-label">
+            password
+          </label>
           <input
             type="password"
             value={password}
@@ -45,8 +50,13 @@ class Auth extends Component {
             id="password"
             autoComplete="off"
             onChange={this.handleChange}
+            className="form-input"
           />
-          <button type="submit">{authType}</button>
+          <div className="button_center">
+            <button className="button" type="submit">
+              {authType}
+            </button>
+          </div>
         </form>
       </div>
     );
